@@ -1,25 +1,25 @@
 package util;
 
-public class Conversor {
+public class ConversorDecRomano {
 
     private static String[] unidade = new String[] {"I", "II", "III","IV","V", "VI", "VII", "VIII", "IX"};
     private static String[] dezena = new String[] {"X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
     private static String[] centena = new String[] {"C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
-    private static String[] milhar = new String[] {"M", "MM", "MMM"};
+    private static String[] milhar = new String[] {"M", "MM", "MMM", "MṼ", "Ṽ", "ṼI" , "ṼII", "ṼIII", "IẌ"};
     private static int n;
 
     public static void setN(int n) {
-        Conversor.n = n;
+        ConversorDecRomano.n = n;
     }
 
     public String unidade() {
 
         int[] numeroDecomposto = decomporNumero(n);
 
-        int unidade = numeroDecomposto[3];
+        int indexUnidade = numeroDecomposto[3];
 
         if (numeroDecomposto[3] > 0){
-            return Conversor.unidade[unidade-1];
+            return ConversorDecRomano.unidade[indexUnidade-1];
         }else {
             return "";
         }
@@ -29,11 +29,39 @@ public class Conversor {
 
         int[] numeroDecomposto = decomporNumero(n);
 
-        int dezena = (numeroDecomposto[2]/10) - 1;
+        int indexDezena = (numeroDecomposto[2]/10) - 1;
 
         if (numeroDecomposto[2] > 0){
-            return Conversor.dezena[dezena];
+            return ConversorDecRomano.dezena[indexDezena];
         }else {
+            return "";
+        }
+    }
+    public String centena() {
+
+        int[] numeroDecomposto = decomporNumero(n);
+
+        int indexCentena = (numeroDecomposto[1]/100) - 1;
+
+        if (numeroDecomposto[1] > 0){
+            return ConversorDecRomano.centena[indexCentena];
+        }else {
+            return "";
+        }
+    }
+    public String milhar() {
+
+        int[] numeroDecomposto = decomporNumero(n);
+
+        int indexMilhar = (numeroDecomposto[0]/1000) - 1;
+
+        if (numeroDecomposto[0] > 0){
+            if (numeroDecomposto[0] == 10000) {
+                return "Ẍ";
+            }else {
+            return ConversorDecRomano.milhar[indexMilhar];
+            }
+        } else {
             return "";
         }
     }
