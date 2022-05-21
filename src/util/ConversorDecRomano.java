@@ -12,7 +12,7 @@ public class ConversorDecRomano {
         ConversorDecRomano.n = n;
     }
 
-    public String unidade() {
+    public static String unidade() {
 
         int[] numeroDecomposto = decomporNumero(n);
 
@@ -25,7 +25,7 @@ public class ConversorDecRomano {
         }
     }
 
-    public String dezena() {
+    public static String dezena() {
 
         int[] numeroDecomposto = decomporNumero(n);
 
@@ -37,7 +37,7 @@ public class ConversorDecRomano {
             return "";
         }
     }
-    public String centena() {
+    public static String centena() {
 
         int[] numeroDecomposto = decomporNumero(n);
 
@@ -49,7 +49,7 @@ public class ConversorDecRomano {
             return "";
         }
     }
-    public String milhar() {
+    public static String milhar() {
 
         int[] numeroDecomposto = decomporNumero(n);
 
@@ -59,6 +59,7 @@ public class ConversorDecRomano {
             if (numeroDecomposto[0] == 10000) {
                 return "Ẍ";
             }else {
+
             return ConversorDecRomano.milhar[indexMilhar];
             }
         } else {

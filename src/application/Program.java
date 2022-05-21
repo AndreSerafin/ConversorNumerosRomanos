@@ -14,20 +14,21 @@ public class Program {
 
         ConversorDecRomano conversor1 = new ConversorDecRomano();
 
-        System.out.print("Digite um numero para ser convertido: ");
+        System.out.print("Digite um numero para ser convertido (1 a 10000): ");
         int n = sc.nextInt();
         char op = 's';
         while(op != n){
 
             ConversorDecRomano.setN(n);
-            System.out.print(conversor1.milhar());
-            System.out.print(conversor1.centena());
-            System.out.print(conversor1.dezena());
-            System.out.printf("%s\n",conversor1.unidade());
+            System.out.print(ConversorDecRomano.milhar());
+            System.out.print(ConversorDecRomano.centena());
+            System.out.print(ConversorDecRomano.dezena());
+            System.out.printf("%s\n",ConversorDecRomano.unidade());
 
 
             System.out.print("Deseja conveter outro numero? - (s/n): ");
             op = sc.next().charAt(0);
+            System.out.print("Digite um numero para ser convertido (1 a 10000): ");
             n = sc.nextInt();
         }
 
