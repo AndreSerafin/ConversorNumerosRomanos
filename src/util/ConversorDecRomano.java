@@ -84,7 +84,7 @@ public class ConversorDecRomano {
         numeroDecomposto[2] = aux2 - aux3;
         //System.out.println(numeroDecomposto[2]);
         //unidade
-        numeroDecomposto[3] = n - numeroDecomposto[0] - numeroDecomposto[1] -numeroDecomposto[2];
+        numeroDecomposto[3] = n - numeroDecomposto[0] - numeroDecomposto[1] - numeroDecomposto[2];
         //System.out.println(numeroDecomposto[3]);
 
         return numeroDecomposto;
