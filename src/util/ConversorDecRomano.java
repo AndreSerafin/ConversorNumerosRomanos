@@ -5,7 +5,7 @@ public class ConversorDecRomano {
     private static String[] unidade = new String[] {"I", "II", "III","IV","V", "VI", "VII", "VIII", "IX"};
     private static String[] dezena = new String[] {"X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
     private static String[] centena = new String[] {"C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
-    private static String[] milhar = new String[] {"M", "MM", "MMM", "MṼ", "Ṽ", "ṼI" , "ṼII", "ṼIII", "IẌ"};
+    private static String[] milhar = new String[] {"M", "MM", "MMM", "_MV_", "_V_", "_VI_" , "_VII_", "_VIII_", "_IX_"};
     private static int n;
 
     public static void setN(int n) {
