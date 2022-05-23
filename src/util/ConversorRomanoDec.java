@@ -1,33 +1,41 @@
 package util;
 
-public class ConversorRomanoDec {
+import java.util.HashMap;
 
-    private static String[] unidade = new String[] {"I", "II", "III","IV","V", "VI", "VII", "VIII", "IX"};
-    private static String[] dezena = new String[] {"X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
-    private static String[] centena = new String[] {"C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
-    private static String[] milhar = new String[] {"M", "MM", "MMM", "_MV_", "_V_", "_VI_" , "_VII_", "_VIII_", "_IX_"};
+public class ConversorRomanoDec {
     private static String num;
 
     public static void setNum(String num) {
         ConversorRomanoDec.num = num;
     }
 
-    public static void identificarNumero(String num) {
+    public static int identificarNumero(String num) {
 
-        int milharDec;
-        for(int i = 0; i < milhar.length; i++) {
-            if (num.equals(milhar[i])) {
-                milharDec = 1000 * (i + 1);
-                System.out.println(milharDec);
+        HashMap<Character, Integer> mapa = new HashMap<>();
+
+        mapa.put('I', 1);
+        mapa.put('V', 5);
+        mapa.put('X', 10);
+        mapa.put('L', 50);
+        mapa.put('C', 100);
+        mapa.put('D', 500);
+        mapa.put('M', 1000);
+        mapa.put('Ṽ', 5000);
+        mapa.put('Ẍ', 10000);
+
+        int numero = 0;
+
+        for (int i = 0; i < num.length(); i++) {
+            if(i > 0 && mapa.get(num.charAt(i)) > mapa.get(num.charAt(i - 1))) {
+                numero += mapa.get(num.charAt(i)) - 2 * mapa.get(num.charAt(i - 1));
+            }
+            else {
+                numero += mapa.get(num.charAt(i));
             }
         }
-        int centenaDec;
-        for(int i = 0; i < centena.length; i++) {
-            if (num.equals(centena[i])) {
-                centenaDec = 100 * (i + 1);
-                System.out.println(centena);
-            }
-        }
+
+        return numero;
+
     }
 
 
