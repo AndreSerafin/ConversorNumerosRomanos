@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="conversorNumerosRomanos:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/conversorNumerosRomanos_jar</output-path>
+    <root id="archive" name="conversorNumerosRomanos.jar">
+      <element id="module-output" name="conversorNumerosRomanos" />
+    </root>
+  </artifact>
+</component>

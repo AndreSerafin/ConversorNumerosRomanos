@@ -8,10 +8,11 @@ import java.util.Scanner;
 
 public class Program {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
+
 
         System.out.println("╔════════════════════════════════════════════════╗");
         System.out.println("║               Escolha uma opção:               ║");
@@ -30,7 +31,11 @@ public class Program {
                     int n = sc.nextInt();
 
                     ConversorDecRomano.setN(n);
-
+                    for (int i = 0; i < 4; i++){
+                        Thread.sleep(1000);
+                        System.out.print(". ");
+                    }
+                    System.out.println();
                     System.out.printf("%d em Numeral Romano = %s", n, ConversorDecRomano.resultado());
 
                 }case 2 -> {
@@ -39,6 +44,11 @@ public class Program {
                     System.out.print("Utilize - M para 1000, Ṽ para 5000 e Ẍ para 10000: ");
                     sc.nextLine();
                     String num = sc.nextLine();
+
+                    for (int i = 0; i < 4; i++){
+                        Thread.sleep(1000);
+                        System.out.print(". ");
+                    }
                     System.out.println();
 
                     System.out.printf("%s em Indo-Arábico = %d",num, ConversorRomanoDec.identificarNumero(num));
@@ -48,6 +58,7 @@ public class Program {
                 }
             }
 
+            Thread.sleep(1000);
             System.out.println("\n╔════════════════════════════════════════════════╗");
             System.out.println("║               Escolha uma opção:               ║");
             System.out.println("║            0 - Finalizar programa              ║");
